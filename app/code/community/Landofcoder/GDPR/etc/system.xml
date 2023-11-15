@@ -64,17 +64,35 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </gtm_container_id>
+                        <cookietitle translate="label">
+                            <label>Cookie Title</label>
+                            <comment>Input cookie Title (empty to use default).</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cookietitle>
+                        <linktitle translate="label">
+                            <label>Link Title</label>
+                            <comment>Input Link Title (empty to use default).</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>145</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </linktitle>
+                        <acceptlabel translate="label">
+                            <label>Accept Cookie Label</label>
+                            <comment>Input Accept Cookie Label (empty to use default).</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </acceptlabel>
                     </fields>
                 </configuration>
-                <support>
-                    <label>Support with GDPR</label>
-                    <comment><![CDATA[<p><b>This extension DOES NOT automatically ensure full compliance with GDPR.</b></p><p>If you require support with all aspects of GDPR you can sign-up to a hassle-free package via our legal partner <a href="https://goo.gl/QLh8qR">GDPR Privacy Policy</a></p><iframe width="560" height="315" src="https://www.youtube.com/embed/1mDT-x2XnEg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br><H3><a href="https://goo.gl/QLh8qR">Click here to find out more on the GDPR Privacy Policy Compliance Pack</a></h3>]]></comment>
-                    <frontend_type>text</frontend_type>
-                    <sort_order>2</sort_order>
-                    <show_in_default>1</show_in_default>
-                    <show_in_website>1</show_in_website>
-                    <show_in_store>1</show_in_store>
-                </support>
             </groups>
         </landofcoder_gdpr>
     </sections>
