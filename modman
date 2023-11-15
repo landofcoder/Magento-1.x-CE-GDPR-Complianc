@@ -1,6 +1,0 @@
-Landofcoder/GDPR/* app/code/community/Landofcoder/GDPR/
-template/Landofcoder/* app/design/frontend/base/default/template/Landofcoder/
-layout/Landofcoder/* app/design/frontend/base/default/layout/Landofcoder/
-Landofcoder_GDPR.xml app/etc/modules/Landofcoder_GDPR.xml
-email/Landofcoder/gdpr/* app/locale/en_US/template/email/Landofcoder/gdpr/
-cookiealert.css skin/frontend/base/default/css/Landofcoder/gdpr/cookiealert.css

@@ -1,7 +1,7 @@
 <?php
 if(Mage::getStoreConfig('landofcoder_gdpr/configuration/cookienotice'))
 {
-    $noticeHtml = $this->_view->getLayout()->createBlock('Magento\Cms\Block\Bl‌​ock')->setBlockId('gdpr-content')->toHt‌​ml();
+    $noticeHtml = Mage::getSingleton('core/layout')->createBlock('cms/block')->setBlockId('gdpr-content')->toHtml();
     $noticeHtml = $noticeHtml ? $noticeHtml : $this->__('This website (landofcoder.com) uses cookies to ensure proper functionality of our shopping cart and checkout progress. By continuing to browse the site you are agreeing to the use of cookies.');
 
     $cookieTitle = Mage::getStoreConfig('landofcoder_gdpr/configuration/cookietitle');
