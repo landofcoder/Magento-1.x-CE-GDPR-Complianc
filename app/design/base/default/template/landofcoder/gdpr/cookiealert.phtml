@@ -1,16 +1,25 @@
 <?php
 if(Mage::getStoreConfig('landofcoder_gdpr/configuration/cookienotice'))
 {
+    $noticeHtml = $this->_view->getLayout()->createBlock('Magento\Cms\Block\Bl‌​ock')->setBlockId('gdpr-content')->toHt‌​ml();
+    $noticeHtml = $noticeHtml ? $noticeHtml : $this->__('This website (landofcoder.com) uses cookies to ensure proper functionality of our shopping cart and checkout progress. By continuing to browse the site you are agreeing to the use of cookies.');
+
+    $cookieTitle = Mage::getStoreConfig('landofcoder_gdpr/configuration/cookietitle');
+    $cookieTitle = $cookieTitle ? $cookieTitle : $this->__('Cookie Policy');
+    $linktitle = Mage::getStoreConfig('landofcoder_gdpr/configuration/linktitle');
+    $linktitle = $linktitle ? $linktitle : $this->__('Click here to learn about cookie settings.');
+    $acceptlabel = Mage::getStoreConfig('landofcoder_gdpr/configuration/acceptlabel');
+    $acceptlabel = $acceptlabel ? $acceptlabel : $this->__('Accept');
 	?>
 <div id="cookiealert" class="cookiealert" style="display: none;">
 	<div class="message">
-		<span class="cookie-title"><?php echo $this->__('Cookie Policy');?></span>
+		<span class="cookie-title"><?php echo $cookieTitle;?></span>
 		<p>
-	    	<?php echo $this->__('This website (WatchCo.com) uses cookies to ensure proper functionality of our shopping cart and checkout progress. By continuing to browse the site you are agreeing to the use of cookies.');?>
-	    	<a href="<?php echo $this->getCmsPageUrl(); ?>"><?php echo $this->__('Click here to learn about cookie settings.'); ?></a>
+	    	<?php echo $noticeHtml; ?>
+	    	<a href="<?php echo $this->getCmsPageUrl(); ?>"><?php echo $linktitle; ?></a>
 		</p>
 		<p class="accept" style="width: 50%; display: inline-block;">
-			<a href="javascript:acceptCookieAlert();"><?php echo $this->__('Accept');?></a>
+			<a href="javascript:acceptCookieAlert();"><?php echo $acceptlabel;?></a>
 		</p>
 		
 	</div>
