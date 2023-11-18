@@ -84,10 +84,11 @@
                 <cookienotice>1</cookienotice>
                 <enabled>1</enabled>
                 <cookietitle>Cookie-Richtlinie</cookietitle>
-                <linktitle>Klicken Sie hier, um mehr über die Cookie-Einstellungen zu erfahren.</linktitle>
+                <linktitle>Klicken Sie hier, um mehr uber die Cookie-Einstellungen zu erfahren.</linktitle>
                 <acceptlabel>Akzeptieren</acceptlabel>
                 <cms_page>home</cms_page>
                 <enablepopup>1</enablepopup>
+                <enablejquery>0</enablejquery>
             </configuration>
         </landofcoder_gdpr>
     </default>

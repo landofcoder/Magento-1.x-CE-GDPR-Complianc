@@ -89,7 +89,10 @@ if (Mage.Cookies.get('cookieAlertState') == 1) {
     </div>
   </div>
 </div>
-
+<?php if (Mage::getStoreConfig('landofcoder_gdpr/configuration/enablejquery')) { ?>
+<script src="/js/lib/jquery/jquery-3.3.1.slim.min.js"></script>
+<script src="/js/lib/jquery/noconflict.js"></script>
+<?php } ?>
 <script src="/js/lib/jquery/popper.min.js"></script>
 <script src="/js/lib/jquery/bootstrap.bundle.min.js"></script>
 
@@ -101,6 +104,7 @@ jQuery(document).ready(function() {
         jQuery('#contentModal').find('.modal-body embed').attr('src', `${pathUrl + 'DATENS.html'}`);
         jQuery('#contentModal').find('#contentModalLabel').text("<?php echo $this->__('DATENSCHUTZERKLÄRUNG');?>");
         jQuery('#contentModal').modal('show');
+        jQuery('#contentModal').toogleClass("show");
     }
     jQuery('.open-modal-policy').on('click', function() {
        openPolicyPopup();
