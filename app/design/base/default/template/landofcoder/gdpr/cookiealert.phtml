@@ -72,7 +72,8 @@ if (Mage.Cookies.get('cookieAlertState') == 1) {
     loadCookieScript();
 }
 </script>
-<?php if (Mage::getStoreConfig('landofcoder_gdpr/configuration/enablepopup')) : ?>
+
+<?php if (Mage::getStoreConfig('landofcoder_gdpr/configuration/enablepopup')) { ?>
 <div class="modal fade" id="contentModal" tabindex="-1" role="dialog" aria-labelledby="contentModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document" style="max-width: 1200px; margin: auto; height: 100%;">
     <div class="modal-content" style="top: 50%; transform: translateY(-50%);">
@@ -106,6 +107,6 @@ jQuery(document).ready(function() {
     });
 });
 </script>
-<?php endif; ?>
-    <?php
+<?php } ?>
+<?php
 }
