@@ -2,7 +2,6 @@
 if(Mage::getStoreConfig('landofcoder_gdpr/configuration/cookienotice'))
 {
     $baseUrl = Mage::getBaseUrl();
-    $baseUrlLink = str_replace("/index.php", "/", $baseUrl);
     $baseUrl = str_replace(["https://", "/"] , "", $baseUrl);
     $noticeHtml = Mage::getSingleton('core/layout')->createBlock('cms/block')->setBlockId('gdpr-content')->toHtml();
     $noticeHtml = $noticeHtml ? $noticeHtml : $this->__('Diese Website (%s) verwendet Cookies, um die ordnungsgemäße Funktionalität unseres Warenkorbs und den Bestellvorgang sicherzustellen. Indem Sie auf der Website weitersurfen, stimmen Sie der Verwendung von Cookies zu.', $baseUrl);
@@ -13,7 +12,7 @@ if(Mage::getStoreConfig('landofcoder_gdpr/configuration/cookienotice'))
     $linktitle = $linktitle ? $linktitle : $this->__('Click here to learn about cookie settings.');
     $acceptlabel = Mage::getStoreConfig('landofcoder_gdpr/configuration/acceptlabel');
     $acceptlabel = $acceptlabel ? $acceptlabel : $this->__('Accept');
-?>
+    ?>
 <div id="cookiealert" class="cookiealert" style="display: none;">
     <div class="message">
         <span class="cookie-title"><?php echo $cookieTitle;?></span>
@@ -49,7 +48,7 @@ function loadCookieScript() {
 <?php
 $gtmContainerId = Mage::getStoreConfig('landofcoder_gdpr/configuration/gtm_container_id');
 if (!empty($gtmContainerId)) {
-?>
+    ?>
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.text = 'var Translator = new Translate([]);';
@@ -72,40 +71,5 @@ if (Mage.Cookies.get('cookieAlertState') == 1) {
     loadCookieScript();
 }
 </script>
-<?php if (Mage::getStoreConfig('landofcoder_gdpr/configuration/enablepopup')) : ?>
-<div class="modal fade" id="contentModal" tabindex="-1" role="dialog" aria-labelledby="contentModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document" style="max-width: 1200px; margin: auto; height: 100%;">
-    <div class="modal-content" style="top: 50%; transform: translateY(-50%);">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contentModalLabel"><?php echo $cookieTitle;?></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <embed src="" type="text/html" frameBorder="0" scrolling="auto" height="700px" width="100%"></embed>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script src="/js/lib/jquery/popper.min.js"></script>
-<script src="/js/lib/jquery/bootstrap.bundle.min.js"></script>
-
-<script>
-jQuery(document).ready(function() {
-    const pathUrl = '<?php echo $baseUrlLink; ?>';
-    
-    function openPolicyPopup () {
-        jQuery('#contentModal').find('.modal-body embed').attr('src', `${pathUrl + 'DATENS.html'}`);
-        jQuery('#contentModal').find('#contentModalLabel').text("<?php echo $this->__('DATENSCHUTZERKLÄRUNG');?>");
-        jQuery('#contentModal').modal('show');
-    }
-    jQuery('.open-modal-policy').on('click', function() {
-       openPolicyPopup();
-    });
-});
-</script>
-<?php endif; ?>
     <?php
 }

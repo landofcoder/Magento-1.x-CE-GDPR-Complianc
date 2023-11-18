@@ -81,7 +81,13 @@
                 <enabled>1</enabled>
             </options>
             <configuration>
+                <cookienotice>1</cookienotice>
+                <enabled>1</enabled>
+                <cookietitle>Cookie-Richtlinie</cookietitle>
+                <linktitle>Klicken Sie hier, um mehr über die Cookie-Einstellungen zu erfahren.</linktitle>
+                <acceptlabel>Akzeptieren</acceptlabel>
                 <cms_page>home</cms_page>
+                <enablepopup>1</enablepopup>
             </configuration>
         </landofcoder_gdpr>
     </default>
